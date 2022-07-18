@@ -1,0 +1,25 @@
+.ratingsContainer {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 12px;
+
+  .stars {
+  }
+
+  .rating {
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #ff6600;
+  }
+
+  .reviews {
+    color: #999999;
+  }
+
+  .buyers {
+    margin-left: 24px;
+  }
+}
