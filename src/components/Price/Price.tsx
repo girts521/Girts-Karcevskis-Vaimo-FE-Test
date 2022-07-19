@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
+import {Options} from "../../Types/Product"
 
-const Price: React.FC = () => {
+const Price: React.FC<{options: Options}> = ({options}) => {
+
+  useEffect(() => {
+    console.log(options)
+  }, [])
+
   return (
     <div className={styles.priceContainer}>
       <div className={styles.currentPrice}>

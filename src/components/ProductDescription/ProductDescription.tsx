@@ -1,15 +1,17 @@
 import React from "react";
 import styles from './styles.module.scss'
+import { Tags } from "../../Types/Product";
 
-const ProductDescription: React.FC = () => {
+const ProductDescription: React.FC<{text: String, tags: Tags}> = ({text, tags}) => {
 
     return (
         <div className={styles.productDescription}>
         <p>
-          2021 hot selling GPS 5G quadcopter drone with camera remote control
-          aircraft drone WiFi mini drone camera
+          {text}
         </p>
-        <div className={styles.hotSale}>Hot sale products</div>
+        {tags.map((tag) => {
+        return <div key={`${tag}${Math.random()}`} className={styles.hotSale}>{tag}</div> 
+        })}        
       </div>
     )
 }

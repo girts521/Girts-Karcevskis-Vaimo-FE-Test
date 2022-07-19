@@ -1,22 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { Reviews } from "../../Types/Product";
 
-const Ratings: React.FC = () => {
+const Ratings: React.FC<{ reviews: Reviews }> = ({ reviews }) => {
+  const [ratings, setRatings] = useState<JSX.Element[]>([]);
+
+  useEffect(() => {
+    let rating = parseInt(reviews.rating);
+    setRatings([]);
+
+    const setRatingsRecursive = () => {
+      if (rating === 0) return;
+      setRatings((prevState) => {
+        return [
+          ...prevState,
+          <img key={Math.random()} src="star.png" alt="star" />,
+        ];
+      });
+      rating--;
+      setRatingsRecursive();
+    };
+    setRatingsRecursive();
+  }, []);
+
+
   return (
-    <div className={styles.ratingsContainer}>
+    <div onClick={() => console.log(reviews)} className={styles.ratingsContainer}>
       <div className={styles.stars}>
-        <img src="star.png" alt="star" />
-        <img src="star.png" alt="star" />
-        <img src="star.png" alt="star" />
-        <img src="star.png" alt="star" />
-        <img src="star.png" alt="star" />
+        {ratings.length &&
+          ratings.map((rating) => {
+            return rating;
+          })}
       </div>
 
-      <div className={styles.rating}>5.0</div>
+      <div className={styles.rating}>{reviews.rating}</div>
 
-      <div className={styles.reviews}>7 Reviews</div>
+      <div className={styles.reviews}>{`${reviews.count} Reviews`}</div>
 
-      <div className={styles.buyers}>19 buyers</div>
+      <div className={styles.buyers}>{`${reviews.total_buyers} buyers`}</div>
     </div>
   );
 };

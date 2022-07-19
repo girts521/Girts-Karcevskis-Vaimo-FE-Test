@@ -1,0 +1,89 @@
+.addToContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 5%);
+  border-radius: 5px;
+  .shipping {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .shippingText {
+      color: #999999;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      width: 145px;
+      margin-bottom: 12px;
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    .shippingPrice {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+
+  .leadTime {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+    p {
+      margin-right: 14px;
+      span {
+        font-weight: 700;
+      }
+    }
+
+    img {
+    }
+  }
+
+  .shippingTime {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+    p {
+      margin-right: 14px;
+      span {
+        font-weight: 700;
+      }
+    }
+
+    img {
+    }
+  }
+
+  .loginBtn {
+    padding: 10px 24px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #ff6600;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .contactBtn {
+    padding: 10px 24px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    margin-bottom: 12px;
+    img {
+      margin-right: 12px;
+    }
+  }
+}
