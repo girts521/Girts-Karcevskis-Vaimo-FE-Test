@@ -12,7 +12,7 @@ const ProductChoice: React.FC<{option:Option}> = ({option}) => {
     <div className={styles.priceAndQty}>
       <div className={styles.productPrice}>R {option.price.value}</div>
 
-    <Quantity />
+    <Quantity price={option.price.value} option={option.label}/>
 
     </div>
   </div>

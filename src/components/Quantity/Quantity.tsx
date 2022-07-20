@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../store/cart";
+
 
 const Quantity: React.FC<{
   minValue?: number;
   maxValue?: number;
   incrementValue?: number;
-}> = ({ minValue = 0, maxValue = 10, incrementValue = 1 }) => {
+  option: string,
+  price:number
+}> = ({ minValue = 0, maxValue = 10, incrementValue = 1, option, price }) => {
   const [value, setValue] = useState(0);
   const [{disabledMin, disabledMax}, setDisabled] = useState<{disabledMin: boolean, disabledMax:boolean}>({disabledMin: false, disabledMax: false});
+  const dispatch = useDispatch();
+  const cartDataInRedux = useSelector((state: any) => state.cart);
+
 
   useEffect(() => {
+
+    console.log(cartDataInRedux)
+
     if (value === minValue) {
         setDisabled((prevValue) => {
             return {
@@ -81,6 +92,8 @@ const Quantity: React.FC<{
     setValue((prevValue) => {
       return prevValue + incrementValue;
     });
+
+    dispatch(cartActions.addToCart({option,value: value+1, price}))
   };
 
   const remove = () => {
@@ -88,6 +101,8 @@ const Quantity: React.FC<{
       setValue((prevValue) => {
         return prevValue - incrementValue;
       });
+
+    dispatch(cartActions.removeFromCart(option))
     
   };
 
