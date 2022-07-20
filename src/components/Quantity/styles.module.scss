@@ -1,0 +1,35 @@
+.qtyContainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 12px;
+  div,
+  input {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ff6600;
+    border-right: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .remove {
+    border-right: 1px solid #ff6600;
+  }
+  input {
+    padding: 0;
+    border: 1px solid #e6e7eb;
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .add {
+    border-right: 1px solid #ff6600;
+  }
+
+  .disabled {
+    border: 1px solid #e6e7eb;
+    color: #999999;
+  }
+}

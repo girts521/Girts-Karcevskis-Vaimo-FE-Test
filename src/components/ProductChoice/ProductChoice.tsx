@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
 import {Option} from "../../Types/Product"
+import Quantity from "../Quantity/Quantity";
 
 const ProductChoice: React.FC<{option:Option}> = ({option}) => {
 
@@ -11,11 +12,8 @@ const ProductChoice: React.FC<{option:Option}> = ({option}) => {
     <div className={styles.priceAndQty}>
       <div className={styles.productPrice}>R {option.price.value}</div>
 
-      <div className={styles.qtyContainer}>
-        <div className={`${styles.remove} ${styles.disabled}`}>-</div>
-        <input type="number" defaultValue={0} />
-        <div className={styles.add}>+</div>
-      </div>
+    <Quantity />
+
     </div>
   </div>
   );
