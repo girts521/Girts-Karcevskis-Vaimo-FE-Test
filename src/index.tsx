@@ -9,11 +9,11 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
      <BrowserRouter>
     <App />
     </BrowserRouter>
-   </React.StrictMode>
+  //  </React.StrictMode>
 );
 
 //strict mode was causing issues with api being called twice - data changing with each call - the number of images not rerendering and showing incorrect,

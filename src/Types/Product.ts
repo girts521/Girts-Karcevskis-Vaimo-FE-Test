@@ -1,9 +1,6 @@
 export type Data = {
   product: {
-    discount: {
-      amount: string;
-      end_data: string;
-    };
+    discount: Discount,
     gallery: [
       {
         main: string;
@@ -12,23 +9,10 @@ export type Data = {
     name: string;
     options: Options,
     reviews: Reviews;
-    shipping: {
-      lead_time: Info;
-      method: {
-        cost: Currency;
-        country: string;
-        shipping_time: Info;
-        title: string;
-      };
-      props: {
-        fast_dispatch: Boolean;
-        in_stock: Boolean;
-        ready_to_ship: Boolean;
-      };
-    };
+    shipping: Shipping,
     tags: Tags;
   };
-  success: Number;
+  success: number;
 };
 
 export type Tags = [string];
@@ -40,7 +24,7 @@ export type Info = {
 
 export type Option = {
   label: string;
-  old_prices: Currency;
+  old_price: Currency;
   price: Currency;
 };
 
@@ -56,11 +40,33 @@ export type Currency = {
     format: string;
     symbol: string;
   };
-  value: Number;
+  value: number;
 };
 
 export type Reviews = {
-  count: Number;
+  count: number;
   rating: string;
-  total_buyers: Number;
+  total_buyers: number;
+};
+
+export type Discount = {
+  amount: string;
+  end_date: string;
+};
+
+export type Shipping = {
+  lead_time: Info;
+  method: {
+    cost: Currency;
+    country: string;
+    shipping_time: Info;
+    title: string;
+  };
+  props: Props
+};
+
+export type Props = {
+  fast_dispatch: boolean;
+  in_stock: boolean;
+  ready_to_ship: boolean;
 };

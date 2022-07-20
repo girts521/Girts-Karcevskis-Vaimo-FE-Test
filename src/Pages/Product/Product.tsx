@@ -13,14 +13,21 @@ import { Data } from "../../Types/Product";
 
 const Product: React.FC = () => {
   const [productData, setProductData] = useState<Data | null>(null);
+  const [productChoices, setProductChoices] = useState<JSX.Element[]>([])
 
   useEffect(() => {
+    setProductChoices([])
     const fetchData = async () => {
       const res = await fetch("https://fe-assignment.vaimo.net/");
       const data: Data = await res.json();
       if (data.success === 1) {
         setProductData(data);
-        // console.log(data)
+        console.log(data)
+        for (const [key, value] of Object.entries(data.product.options)) {
+            setProductChoices((prevState) => {
+                return [...prevState,  <ProductChoice key={key} option={value} />]
+            })
+        }
       }
     };
     try {
@@ -28,7 +35,12 @@ const Product: React.FC = () => {
     } catch (e) {
       console.log(e);
     }
+
+
   }, []);
+
+
+
 
   return (
     <div className={styles.container}>
@@ -39,27 +51,24 @@ const Product: React.FC = () => {
       </div>
 
       <div className={styles.productInfo}>
-        <Badges />
+        {productData.product.shipping.props && <Badges props={productData.product.shipping.props} />}
         <ProductDescription text={productData!.product.name} tags={productData!.product.tags}/>
         <Ratings reviews={productData!.product.reviews} />
         <Price options={productData!.product.options}/>
         <Expo />
-        <Discount />
+        <Discount discount={productData!.product.discount}/>
         <div className={styles.productChoiceContainer}>
-          <ProductChoice />
-          <ProductChoice />
-          <ProductChoice />
+          {productChoices.map((choice) => {
+            return choice
+          })}
+
         </div>
         <AssuranceAndPayments />
         <div className={styles.links}>
           <a href="">Alibaba.com Logistics</a>
           <a href="">Inspection Solutions</a>
         </div>
-        <AddTo
-          func={() => {
-            console.log(productData?.product);
-          }}
-        />
+        <AddTo shipping={productData!.product.shipping}/>
       </div>
         </>
      ) : 'Loading...'}

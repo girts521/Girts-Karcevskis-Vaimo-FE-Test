@@ -21,6 +21,8 @@ const Ratings: React.FC<{ reviews: Reviews }> = ({ reviews }) => {
       setRatingsRecursive();
     };
     setRatingsRecursive();
+
+    
   }, []);
 
 
