@@ -22,7 +22,6 @@ const Product: React.FC = () => {
       const data: Data = await res.json();
       if (data.success === 1) {
         setProductData(data);
-        console.log(data);
         for (const [key, value] of Object.entries(data.product.options)) {
           setProductChoices((prevState) => {
             return [...prevState, <ProductChoice key={key} option={value} />];
@@ -67,8 +66,6 @@ const Product: React.FC = () => {
               <a href="">Alibaba.com Logistics</a>
               <a href="">Inspection Solutions</a>
             </div>
-
-           
           </div>
           <AddTo shipping={productData!.product.shipping} />
         </>

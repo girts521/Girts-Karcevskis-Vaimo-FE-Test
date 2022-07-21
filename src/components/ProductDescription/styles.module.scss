@@ -24,13 +24,11 @@
     bottom: 0;
 
     @media (min-width: 380px) {
-      // display: inline-block;
       position: static;
     }
 
-    @media (min-width:1200px) {
+    @media (min-width: 1200px) {
       position: absolute;
-
     }
   }
 }

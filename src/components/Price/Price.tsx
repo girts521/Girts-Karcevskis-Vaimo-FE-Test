@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import {Options} from "../../Types/Product"
+import { Options } from "../../Types/Product";
 
-const Price: React.FC<{options: Options}> = ({options}) => {
-
-  const [[minPrice, maxPrice], setPrice] = useState<number[]>([])
-  const [[minOldPrice, maxOldPrice], setOldPrice] = useState<number[]>([])
+const Price: React.FC<{ options: Options }> = ({ options }) => {
+  const [[minPrice, maxPrice], setPrice] = useState<number[]>([]);
+  const [[minOldPrice, maxOldPrice], setOldPrice] = useState<number[]>([]);
 
   useEffect(() => {
-    const prices: number[] = []
-    const oldPrices: number[] = []
+    const prices: number[] = [];
+    const oldPrices: number[] = [];
 
     for (const [key, value] of Object.entries(options)) {
-     prices.push(value.price.value)
-     oldPrices.push(value.old_price.value)
+      prices.push(value.price.value);
+      oldPrices.push(value.old_price.value);
     }
 
-    setPrice([Math.min(...prices), Math.max(...prices)])
-    setOldPrice([Math.min(...oldPrices), Math.max(...oldPrices)])
-
-  }, [])
+    setPrice([Math.min(...prices), Math.max(...prices)]);
+    setOldPrice([Math.min(...oldPrices), Math.max(...oldPrices)]);
+  }, []);
 
   return (
     <div className={styles.priceContainer}>
@@ -32,7 +30,9 @@ const Price: React.FC<{options: Options}> = ({options}) => {
         </div>
       </div>
 
-      <div className={styles.oldPrice}>{`R ${minOldPrice} - R ${maxOldPrice}`}</div>
+      <div
+        className={styles.oldPrice}
+      >{`R ${minOldPrice} - R ${maxOldPrice}`}</div>
     </div>
   );
 };

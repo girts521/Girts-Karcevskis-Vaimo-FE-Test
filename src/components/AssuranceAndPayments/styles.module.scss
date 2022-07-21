@@ -1,36 +1,36 @@
 .tradeAssurance {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 12px;
-    font-weight: 700;
-    color: #999999;
-    font-size: 14px;
-    line-height: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #999999;
+  font-size: 14px;
+  line-height: 16px;
 
-    span {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
-    }
-
-    svg {
-      padding-right: 5px;
-    }
-  }
-
-  .payments {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #999999;
-    font-size: 12px;
+  span {
     font-weight: 400;
+    font-size: 12px;
     line-height: 16px;
-    margin-bottom: 12px;
-
-    svg {
-      padding: 4px 2px;
-      width: 17px;
-    }
   }
+
+  svg {
+    padding-right: 5px;
+  }
+}
+
+.payments {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 12px;
+
+  svg {
+    padding: 4px 2px;
+    width: 17px;
+  }
+}

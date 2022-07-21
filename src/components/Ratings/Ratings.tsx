@@ -21,13 +21,10 @@ const Ratings: React.FC<{ reviews: Reviews }> = ({ reviews }) => {
       setRatingsRecursive();
     };
     setRatingsRecursive();
-
-    
   }, []);
 
-
   return (
-    <div onClick={() => console.log(reviews)} className={styles.ratingsContainer}>
+    <div className={styles.ratingsContainer}>
       <div className={styles.stars}>
         {ratings.length &&
           ratings.map((rating) => {

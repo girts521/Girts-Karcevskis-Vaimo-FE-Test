@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { CartState } from "../types";
 
 const initialCartState: any = { cart: [] };
 
@@ -18,7 +17,6 @@ const cartSlice = createSlice({
 
       if (product) {
         //if the product was found in cart increment its quantity
-        // product.value++;
         product.value = action.payload.value
       } else {
         //if it was not found then push it to the cart
