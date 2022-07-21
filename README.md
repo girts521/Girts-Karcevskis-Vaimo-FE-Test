@@ -7,22 +7,21 @@ Technologies used:
 - Sass
 - Typescript
 
-I choose to use React because Iam the most comfoirtable working in React and it makes it very easy to create applications like this. 
-Also, i love that it is very modular and i can add the libraries and features I need/want. 
+I choose to use React because I am the most comfortable working in React and it makes it very easy to create applications like this. Also, i love that it is very modular and i can add the libraries and features I need/want.
 
-In order to create the project very fast i used create react app. It instantly creates a project where you can just start writting the code without the need to configure everything first. 
+In order to create the project very fast i used create react app. It instantly creates a project where you can just start writing the code without the need to configure everything first.
 
-React router is not really needed for this project, because there is only one page. But I added it so that if later it would become a bigger project it would be easy to add more pages. 
+React router is not really needed for this project, because there is only one page. But I added it so that if later it would become a bigger project it would be easy to add more pages.
 
-I choose to use Redux for global state management, mainly because i feel the most comfortable using it, and considering the time constraints, I did not want to try something new. But in the future in a project with more time, I would try to use Recoil. I have not yet used Recoil, but I have looked at how it works and is sounds very interesting, that why i really want to try and use it. 
+I choose to use Redux for global state management, mainly because i feel the most comfortable using it, and considering the time constraints, I did not want to try something new. But in the future in a project with more time, I would try to use Recoil. I have not yet used Recoil, but I have looked at how it works and is sounds very interesting, that why i really want to try and use it.
 
-Redux toolkit is something i always use togeather with redux, because it simplifies the use of redux greatly. 
+Redux toolkit is something i always use together with redux, because it simplifies the use of redux greatly.
 
-I enjoy sass over styled components. Mostly because I like sass syntax more, as well as the use of classes instead of components. 
+I enjoy sass over styled components. Mostly because I like sass syntax more, as well as the use of classes instead of components.
 
-I try to use Typescript for all of my projects. But often it makes the development a little bit slower, because I have to write all the types. But after carefully writting all the types it makes development much more predictable. In this project due to time constraints at later places i have used "any" as a type, to save time and work on more features. 
+I try to use Typescript for all of my projects. But often it makes the development a little bit slower, because I have to write all the types. But after carefully writting all the types it makes development much more predictable. In this project due to time constraints at later places i have used "any" as a type, to save time and work on more features.
 
-There are a few mistakes in this project, due to time constraints. Mainly in the Quantity component, when the quantity is changed via the input not the buttons.  
+There are a few mistakes in this project, due to time constraints. Mainly in the Quantity component, when the quantity is changed via the input not the buttons.
 
 
 ## Available Scripts
