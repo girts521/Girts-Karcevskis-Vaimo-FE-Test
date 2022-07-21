@@ -1,9 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
+
+  @media (max-width:1200px) {
+    max-width: 740px;
+    margin: auto;
+  }
+
   .image {
     width: 100%;
     margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
     img {
       height: 360px;
     }
@@ -30,4 +38,26 @@
       }
     }
   }
+}
+ 
+@media (min-width: 1200px) {
+ .container{
+  flex-direction: row;
+  margin-top: 48px;
+  margin-left: 72px;
+  margin-right: 24px;
+  justify-content: space-between;
+  .image{
+    width: 416px;
+
+    img{
+      height: 416px;
+    }
+  }
+  .productInfo{
+    margin-right: 24px;
+    width: 40%;
+
+  }
+ }
 }

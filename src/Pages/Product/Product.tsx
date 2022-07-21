@@ -67,9 +67,10 @@ const Product: React.FC = () => {
               <a href="">Alibaba.com Logistics</a>
               <a href="">Inspection Solutions</a>
             </div>
-            
-            <AddTo shipping={productData!.product.shipping} />
+
+           
           </div>
+          <AddTo shipping={productData!.product.shipping} />
         </>
       ) : (
         "Loading..."
